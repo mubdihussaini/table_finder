@@ -71,13 +71,29 @@ app.get("/api/", function(req, res) {
 
 app.post("/api/new", function(req, res) {
   var party = req.body;
-  party.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
 
   if( reservations.length >=5 ){
     waitlists.push(party);
   }
   else{
     reservations.push(party);
+  }
+});
+
+app.post("/api/remove", function(req, res) {
+  var party = req.body;
+
+  for (var i = 0; i < reservations.length; i++){
+    if (party.customerName == reservations[i].customerName){
+      reservations.splice(i,1);
+      return;
+    }
+  }
+  for (var i = 0; i < waitlists.length; i++){
+    if (party.customerName == waitlists[i].customerName){
+      waitlists.splice(i,1);
+      return;
+    }
   }
 });
 
