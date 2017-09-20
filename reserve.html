@@ -57,6 +57,10 @@
         email: $("#email").val().trim(),
         partySize: $("#par").val().trim()
       };
+      $("#usr").val('');
+      $("#num").val('');
+      $('#email').val('');
+      $('#par').val('');
       console.log(newReservation);
 
       $.post("/api/new", newReservation)
