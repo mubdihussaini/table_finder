@@ -81,16 +81,17 @@ app.post("/api/new", function(req, res) {
 });
 
 app.post("/api/remove", function(req, res) {
-  var party = req.body;
+  var customerName = req.body;
 
   for (var i = 0; i < reservations.length; i++){
-    if (party.customerName == reservations[i].customerName){
+    if (customerName === reservations[i].customerName){
       reservations.splice(i,1);
       return;
     }
   }
+
   for (var i = 0; i < waitlists.length; i++){
-    if (party.customerName == waitlists[i].customerName){
+    if (customerName === waitlists[i].customerName){
       waitlists.splice(i,1);
       return;
     }
