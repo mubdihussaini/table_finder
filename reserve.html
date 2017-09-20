@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
@@ -31,24 +32,40 @@
           </div>
           <div class="form-group">
             <label for="num">Phone Number:</label>
-            <input type="number" class="form-control" id="num">
+            <input type="text" class="form-control" id="num">
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email">
+            <input type="text" class="form-control" id="email">
           </div>
           <div class="form-group">
             <label for="par">Party of:</label>
-            <input type="party" class="form-control" id="par">
+            <input type="text" class="form-control" id="par">
           </div>
-          <button type="button" name="button" class="btn btn-info">Reserve</button>
+          <button id="reserve" type="button" name="button" class="btn btn-info">Reserve</button>
         </form>
       </div>
     </div>
   </div>
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $("#reserve").on("click", function(event) {
+      event.preventDefault();
+      var newReservation = {
+        customerName: $("#usr").val().trim(),
+        phoneNumber: $("#num").val().trim(),
+        email: $("#email").val().trim(),
+        partySize: $("#par").val().trim()
+      };
+      console.log(newReservation);
+
+      $.post("/api/new", newReservation)
+        .done(function(data) {
+          console.log(data);
+        });
+    });
+  </script>
+
 </body>
 
 </html>
