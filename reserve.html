@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hot Restaurant</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>McReservation$</h1>
+      <hr>
+      <h3>Make your reservation</h3>
+      <a href="/tables"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> View Tables</button></a>
+      <a href="/"><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></button></a>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">Table Reservation</h4>
+      </div>
+      <div class="panel-body">
+        <form role="form">
+          <div class="form-group">
+            <label for="usr">Name:</label>
+            <input type="text" class="form-control" id="usr">
+          </div>
+          <div class="form-group">
+            <label for="num">Phone Number:</label>
+            <input type="number" class="form-control" id="num">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email">
+          </div>
+          <div class="form-group">
+            <label for="par">Party of:</label>
+            <input type="party" class="form-control" id="par">
+          </div>
+          <button type="button" name="button" class="btn btn-info">Reserve</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+
+</html>
