@@ -18,6 +18,24 @@ var reservations = [
       phoneNumber  : "991-991-9991",
       email        : "JediMaster@starwars.com",
       partySize    : 1
+    },
+    {
+      customerName : "yoda",
+      phoneNumber  : "991-991-9991",
+      email        : "JediMaster@starwars.com",
+      partySize    : 1
+    },
+    {
+      customerName : "yoda",
+      phoneNumber  : "991-991-9991",
+      email        : "JediMaster@starwars.com",
+      partySize    : 1
+    },
+    {
+      customerName : "yoda",
+      phoneNumber  : "991-991-9991",
+      email        : "JediMaster@starwars.com",
+      partySize    : 1
     }
   ];
 

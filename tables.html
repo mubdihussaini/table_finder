@@ -27,6 +27,7 @@
         <div class="panel-body">
           <table class="table center">
             <tbody id='reservations-data'>
+
             </tbody>
           </table>
         </div>
@@ -51,18 +52,42 @@
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script type="text/javascript">
     $.get("/api/", function(data) {
+
       var reservations = data.reservations;
       var waitlists = data.waitlists;
-      $('.data').text(JSON.stringify(data,null,8));
+
       reservations.forEach((value)=>{
-        var tmpEl = $('<td>');
-        tmpEl.text(value);
-        $('#reservations-data').append(tmpEl);
+        var row          = $('<tr>');
+        var nameEl       = $('<td>');
+        var phoneEl      = $('<td>');
+        var emailEl      = $('<td>');
+        var partySizeEl  = $('<td>');
+        nameEl.text(value.customerName);
+        phoneEl.text(value.phoneNumber);
+        emailEl.text(value.email);
+        partySizeEl.text(value.partySize);
+        row.append(nameEl);
+        row.append(phoneEl);
+        row.append(emailEl);
+        row.append(partySizeEl);
+        $('#reservations-data').append(row);
       });
+
       waitlists.forEach((value)=>{
-        var tmpEl = $('<td>');
-        tmpEl.text(value);
-        $('waitlists-data').append(tmpEl);
+        var row          = $('<tr>');
+        var nameEl       = $('<td>');
+        var phoneEl      = $('<td>');
+        var emailEl      = $('<td>');
+        var partySizeEl  = $('<td>');
+        nameEl.text(value.customerName);
+        phoneEl.text(value.phoneNumber);
+        emailEl.text(value.email);
+        partySizeEl.text(value.partySize);
+        row.append(nameEl);
+        row.append(phoneEl);
+        row.append(emailEl);
+        row.append(partySizeEl);
+        $('#waitlists-data').append(row);
       });
     });
   </script>
